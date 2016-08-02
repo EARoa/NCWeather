@@ -9,10 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var location = [Location]()
 
+    @IBOutlet weak var currentTemperature :UILabel!
+    @IBOutlet weak var currentSummary :UILabel!
+    @IBOutlet weak var currentHumidity :UILabel!
+    @IBOutlet weak var currentVisibility :UILabel!
+    @IBOutlet weak var currentWindSpeed :UILabel!
+
+//    var latitude :Double!
+//    var longitude :Double!
+//    
+    let latitude = 29.737689
+    let longitude = -95.375576
+
+    let currentLocation = Location()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        apiSetup()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +39,39 @@ class ViewController: UIViewController {
     }
 
 
+    private func apiSetup() {
+        let theAPI = "https://api.forecast.io/forecast/ee590865b8cf07d544c96463ae5d47c5/\(latitude),\(longitude)"
+        guard let url = NSURL(string: theAPI) else {
+            fatalError("Invalid URL")
+        }
+        let session = NSURLSession.sharedSession()
+        
+        session.dataTaskWithURL(url) { (data :NSData?, response :NSURLResponse?, error :NSError?) in
+            guard let jsonResult = NSString(data: data!, encoding: NSUTF8StringEncoding) else {
+                fatalError("Unable to format data")
+            }
+            let postResult = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableLeaves) as! NSDictionary
+            
+            
+            
+            let dataArray = postResult["currently"] as! NSDictionary?;
+                self.currentLocation.temperature = dataArray!.valueForKey("temperature") as! Int
+                self.currentLocation.summary = dataArray!.valueForKey("summary") as! String
+                self.currentLocation.humidity = dataArray!.valueForKey("humidity") as! Int
+                self.currentLocation.visibility = dataArray!.valueForKey("visibility") as! Int
+                self.currentLocation.windspeed = dataArray!.valueForKey("windSpeed") as! Int
+            
+                self.location.append(self.currentLocation)
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.currentTemperature.text = "Temperature: \(self.currentLocation.temperature)℉"
+
+                self.currentSummary.text = "Summary: \(self.currentLocation.summary)"
+                self.currentHumidity.text = "Humidity: \(self.currentLocation.humidity)"
+                self.currentVisibility.text = "Visibility: \(self.currentLocation.visibility)"
+                self.currentWindSpeed.text = "Windspeed: \(self.currentLocation.windspeed)"
+            })
+            }.resume()
+    }
 }
 
