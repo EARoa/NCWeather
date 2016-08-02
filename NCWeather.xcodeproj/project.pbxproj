@@ -13,7 +13,36 @@
 		100CACF11D510BE500CE8203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 100CACF01D510BE500CE8203 /* Assets.xcassets */; };
 		100CACF41D510BE500CE8203 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100CACF21D510BE500CE8203 /* LaunchScreen.storyboard */; };
 		100CACFC1D510F2A00CE8203 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CACFB1D510F2A00CE8203 /* Location.swift */; };
+		100CAD1A1D5137D900CE8203 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100CAD191D5137D900CE8203 /* NotificationCenter.framework */; };
+		100CAD1D1D5137D900CE8203 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CAD1C1D5137D900CE8203 /* TodayViewController.swift */; };
+		100CAD201D5137D900CE8203 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100CAD1E1D5137D900CE8203 /* MainInterface.storyboard */; };
+		100CAD241D5137D900CE8203 /* WeatherWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 100CAD171D5137D900CE8203 /* WeatherWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		100CAD2A1D513E1200CE8203 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CAD291D513E1200CE8203 /* Location.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		100CAD221D5137D900CE8203 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 100CACDE1D510BE500CE8203 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 100CAD161D5137D900CE8203;
+			remoteInfo = WeatherWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		100CAD281D5137D900CE8203 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				100CAD241D5137D900CE8203 /* WeatherWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		100CACE61D510BE500CE8203 /* NCWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NCWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +53,12 @@
 		100CACF31D510BE500CE8203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		100CACF51D510BE500CE8203 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		100CACFB1D510F2A00CE8203 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		100CAD171D5137D900CE8203 /* WeatherWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WeatherWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		100CAD191D5137D900CE8203 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		100CAD1C1D5137D900CE8203 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		100CAD1F1D5137D900CE8203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		100CAD211D5137D900CE8203 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		100CAD291D513E1200CE8203 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +69,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		100CAD141D5137D900CE8203 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				100CAD1A1D5137D900CE8203 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -41,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				100CACE81D510BE500CE8203 /* NCWeather */,
+				100CAD1B1D5137D900CE8203 /* WeatherWidget */,
+				100CAD181D5137D900CE8203 /* Frameworks */,
 				100CACE71D510BE500CE8203 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				100CACE61D510BE500CE8203 /* NCWeather.app */,
+				100CAD171D5137D900CE8203 /* WeatherWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +113,25 @@
 			path = NCWeather;
 			sourceTree = "<group>";
 		};
+		100CAD181D5137D900CE8203 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				100CAD191D5137D900CE8203 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		100CAD1B1D5137D900CE8203 /* WeatherWidget */ = {
+			isa = PBXGroup;
+			children = (
+				100CAD1C1D5137D900CE8203 /* TodayViewController.swift */,
+				100CAD1E1D5137D900CE8203 /* MainInterface.storyboard */,
+				100CAD211D5137D900CE8203 /* Info.plist */,
+				100CAD291D513E1200CE8203 /* Location.swift */,
+			);
+			path = WeatherWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,15 +142,34 @@
 				100CACE21D510BE500CE8203 /* Sources */,
 				100CACE31D510BE500CE8203 /* Frameworks */,
 				100CACE41D510BE500CE8203 /* Resources */,
+				100CAD281D5137D900CE8203 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				100CAD231D5137D900CE8203 /* PBXTargetDependency */,
 			);
 			name = NCWeather;
 			productName = NCWeather;
 			productReference = 100CACE61D510BE500CE8203 /* NCWeather.app */;
 			productType = "com.apple.product-type.application";
+		};
+		100CAD161D5137D900CE8203 /* WeatherWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 100CAD271D5137D900CE8203 /* Build configuration list for PBXNativeTarget "WeatherWidget" */;
+			buildPhases = (
+				100CAD131D5137D900CE8203 /* Sources */,
+				100CAD141D5137D900CE8203 /* Frameworks */,
+				100CAD151D5137D900CE8203 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeatherWidget;
+			productName = WeatherWidget;
+			productReference = 100CAD171D5137D900CE8203 /* WeatherWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -98,6 +182,9 @@
 				ORGANIZATIONNAME = "Efrain Ayllon";
 				TargetAttributes = {
 					100CACE51D510BE500CE8203 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					100CAD161D5137D900CE8203 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -116,6 +203,7 @@
 			projectRoot = "";
 			targets = (
 				100CACE51D510BE500CE8203 /* NCWeather */,
+				100CAD161D5137D900CE8203 /* WeatherWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +216,14 @@
 				100CACF41D510BE500CE8203 /* LaunchScreen.storyboard in Resources */,
 				100CACF11D510BE500CE8203 /* Assets.xcassets in Resources */,
 				100CACEF1D510BE500CE8203 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		100CAD151D5137D900CE8203 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				100CAD201D5137D900CE8203 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +240,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		100CAD131D5137D900CE8203 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				100CAD2A1D513E1200CE8203 /* Location.swift in Sources */,
+				100CAD1D1D5137D900CE8203 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		100CAD231D5137D900CE8203 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 100CAD161D5137D900CE8203 /* WeatherWidget */;
+			targetProxy = 100CAD221D5137D900CE8203 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		100CACED1D510BE500CE8203 /* Main.storyboard */ = {
@@ -161,6 +274,14 @@
 				100CACF31D510BE500CE8203 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		100CAD1E1D5137D900CE8203 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				100CAD1F1D5137D900CE8203 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -255,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = NCWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.earoa.NCWeather;
@@ -266,10 +388,33 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = NCWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.earoa.NCWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		100CAD251D5137D900CE8203 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WeatherWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.earoa.NCWeather.WeatherWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		100CAD261D5137D900CE8203 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WeatherWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.earoa.NCWeather.WeatherWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -290,6 +435,15 @@
 			buildConfigurations = (
 				100CACF91D510BE500CE8203 /* Debug */,
 				100CACFA1D510BE500CE8203 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		100CAD271D5137D900CE8203 /* Build configuration list for PBXNativeTarget "WeatherWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				100CAD251D5137D900CE8203 /* Debug */,
+				100CAD261D5137D900CE8203 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
