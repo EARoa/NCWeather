@@ -8,8 +8,10 @@
 
 import UIKit
 import NotificationCenter
+import CoreLocation
 
-class TodayViewController: UIViewController, NCWidgetProviding {
+
+class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManagerDelegate {
         
     var location = [Location]()
     
@@ -19,18 +21,18 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var currentVisibility :UILabel!
     @IBOutlet weak var currentWindSpeed :UILabel!
     
-    //    var latitude :Double!
-    //    var longitude :Double!
-    //
-    let latitude = 29.737689
-    let longitude = -95.375576
+    var latitude :Double!
+    var longitude :Double!
     
     let currentLocation = Location()
+    var locationManager  :CLLocationManager!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationSetup()
         apiSetup()
+        
         
     }
     
@@ -39,9 +41,27 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // Dispose of any resources that can be recreated.
     }
     
+    private func locationSetup(){
+        self.locationManager = CLLocationManager()
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.distanceFilter = kCLDistanceFilterNone
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+        
+        
+        latitude = locationManager.location!.coordinate.latitude
+        longitude = locationManager.location!.coordinate.longitude
+        
+        
+        
+    }
     
     private func apiSetup() {
-        let theAPI = "https://api.forecast.io/forecast/ee590865b8cf07d544c96463ae5d47c5/\(latitude),\(longitude)"
+        print("Lat:\(self.latitude), Long: \(self.longitude)")
+        
+        let theAPI = "https://api.forecast.io/forecast/ee590865b8cf07d544c96463ae5d47c5/\(self.latitude),\(self.longitude)"
+        
         guard let url = NSURL(string: theAPI) else {
             fatalError("Invalid URL")
         }
